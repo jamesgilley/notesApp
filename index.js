@@ -31,3 +31,52 @@ app.get('/api/notes', function(req, res) {
     res.json({ notes });
     //console.log(notes);
 });
+
+app.post('/api/notes', function(req, res) {
+    const noteText = req.body.noteText;
+    const noteTitle = req.body.noteTitle;
+    console.log(req.body)
+    const noteId = Math.floor(Math.random() * 1000);
+    class Note {
+        constructor(noteText, noteTitle, noteId) {
+            this.noteText = noteText;
+            this.noteTitle = noteTitle;
+            this.noteId = noteId;
+        }
+    }
+    let newNote = new Note(noteText, noteTitle, noteId);
+    notes.push(newNote);
+    //console.log('notes:',notes);
+    //console.log('newNote:',newNote);
+    res.send(newNote);
+    //console.log('noteId:',noteId);
+    //res.send('api notes posted here');
+    fs.writeFile('db.json',
+
+        JSON.stringify(notes)
+
+
+        ,
+        function(err) {
+            if (err) throw err;
+            //console.log('Saved!');
+        });
+
+
+});
+
+app.post('/form', (req, res) => {
+    const name = req.body.name
+})
+
+app.delete('/api/notes', function(req, res) {
+    const noteId = Number(req.body.noteId);
+    console.log('deleting', { noteId })
+    notes = notes.filter(n => n.noteId !== noteId)
+    fs.writeFile('db.json',
+        JSON.stringify(notes),
+        function(err) {
+            if (err) throw err;
+            res.send({ success: true, noteId })
+        });
+});
