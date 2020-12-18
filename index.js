@@ -14,3 +14,20 @@ app.use(express.json());
 
 //using serveStatic
 app.use(serveStatic('public'));
+
+let notes = [];
+
+// viewed at http://localhost:3000
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/notes', function(req, res) {
+    res.sendFile(path.join(__dirname + '/notes.html'));
+});
+
+app.get('/api/notes', function(req, res) {
+    //res.send('test77')
+    res.json({ notes });
+    //console.log(notes);
+});
