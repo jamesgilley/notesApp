@@ -80,3 +80,12 @@ app.delete('/api/notes', function(req, res) {
             res.send({ success: true, noteId })
         });
 });
+
+app.listen(3000);
+console.log('server started on port 3000');
+
+(async() => {
+    // Opens the URL in a specified browser.
+    await open('http://localhost:3000/notes', { app: 'chrome' });
+
+})();
