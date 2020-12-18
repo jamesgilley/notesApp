@@ -21,12 +21,12 @@ If you click on the link provided, the file should open in your default browser.
 
 * **James Gilley**
 
--[Link to Portfolio Site](https://jamesgilley.github.io/Employee-Summary/)
--[Link to Github](https://github.com/jamesgilley/Employee-Summary)
+-[Link to Portfolio Site](https://github.com/jamesgilley/notesApp)
+-[Link to Github](https://github.com/jamesgilley)
 -[Link to LinkedIn](https://www.linkedin.com/in/james-gilley-312466187/)
 
 
 ## Acknowledgments
 
 * Thank you to those grading this assignment. All criticism is welcomed and appreciated. 
-[Preview Link ](https://jamesgilley.github.io/Employee-Summary/)
+[Preview Link ](https://notesapp02.herokuapp.com/)
